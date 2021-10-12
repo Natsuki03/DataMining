@@ -59,5 +59,8 @@ df["観測値"] = np.array(noize).T
 
 for i in range(len(noize)):
     plt.plot(n[i], noize[i], marker="^", markersize=5, color="green")
-plt.savefig(path + "ex1.3.png")
-plt.show()
+#plt.savefig(path + "ex1.3.png")
+#plt.show()
+
+#ex1.4
+df.to_csv(path + "dataset1.tsv", sep="\t", index=False)
