@@ -47,6 +47,17 @@ data = np.array([n, true_val]).T
 df = pd.DataFrame(data, columns=["観測点", "真値"])
 
 for i in range(len(n)):
-    plt.plot(n[i], true_val[i], marker=".", markersize=10)
-plt.savefig(path + "ex1.2.png")
+    plt.plot(n[i], true_val[i], marker=".", markersize=10, color="red")
+#plt.savefig(path + "ex1.2.png")
+#plt.show()
+
+#ex1.3
+
+noize = [round(random.normalvariate(mu=0.0, sigma=2.0)/2, 2) for _ in range(20)]
+
+df["観測値"] = np.array(noize).T
+
+for i in range(len(noize)):
+    plt.plot(n[i], noize[i], marker="^", markersize=5, color="green")
+plt.savefig(path + "ex1.3.png")
 plt.show()
