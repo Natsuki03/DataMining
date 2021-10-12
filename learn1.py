@@ -23,3 +23,10 @@ def learn(dataset, test_size, random_state=0):
     lr = linear_model.LinearRegression()
     lr.fit(X_train, y_train)
     return lr, X_train, y_train, X_test, y_test
+
+lr, X_train, y_train, X_test, y_test = learn(data, test_size=0.2)
+
+#ex1.10
+
+predicted = lr.predict(X_test)
+print(predicted)
