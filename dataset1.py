@@ -63,4 +63,7 @@ for i in range(len(noize)):
 #plt.show()
 
 #ex1.4
-df.to_csv(path + "dataset1.tsv", sep="\t", index=False)
+#df.to_csv(path + "dataset1.tsv", sep="\t", index=False)
+
+#ex1.5
+dataset = pd.read_csv(path + "dataset1.tsv", sep="\t")
