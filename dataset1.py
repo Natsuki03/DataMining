@@ -55,15 +55,16 @@ for i in range(len(n)):
 
 noize = [round(random.normalvariate(mu=0.0, sigma=2.0)/2, 2) for _ in range(20)]
 
+noize_data = df["真値"] + noize
 df["観測値"] = np.array(noize).T
 
 for i in range(len(noize)):
-    plt.plot(n[i], noize[i], marker="^", markersize=5, color="green")
-#plt.savefig(path + "ex1.3.png")
-#plt.show()
+    plt.plot(n[i], noize_data[i], marker="^", markersize=5, color="green")
+plt.savefig(path + "ex1.3.png")
+plt.show()
 
 #ex1.4
 #df.to_csv(path + "dataset1.tsv", sep="\t", index=False)
 
 #ex1.5
-dataset = pd.read_csv(path + "dataset1.tsv", sep="\t")
+#dataset = pd.read_csv(path + "dataset1.tsv", sep="\t")
